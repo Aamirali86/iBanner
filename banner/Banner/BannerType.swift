@@ -14,7 +14,7 @@ public enum BannerType: Int {
     case warning
     case info
     case custom
-    
+
     var backgroundColor: UIColor {
         switch self {
         case .success:
@@ -29,11 +29,11 @@ public enum BannerType: Int {
             return .blue
         }
     }
-    
+
     var textColor: UIColor {
         return .white
     }
-    
+
     var icon: UIImage? {
         switch self {
         case .success:

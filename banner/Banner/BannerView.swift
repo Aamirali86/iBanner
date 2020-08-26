@@ -66,7 +66,7 @@ public final class BannerView: UIView {
             contentView.bottomAnchor.constraint(equalTo: swipeIndicator.topAnchor, constant: -8)
         ])
     }
-    
+
     private func setupContent() {
         func makeSymbol() -> UIImageView {
             let imageView = UIImageView(image: BannerConfiguration.shared.bannerType.icon)
@@ -75,7 +75,7 @@ public final class BannerView: UIView {
             imageView.tintColor = .white
             return imageView
         }
-        
+
         func makeMessage() -> UILabel {
             let label = UILabel()
             label.text = message
@@ -85,11 +85,11 @@ public final class BannerView: UIView {
             label.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
             return label
         }
-        
+
         func makeContent() -> UIStackView {
             let symbol = makeSymbol()
             symbol.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-            
+
             let stackView = UIStackView(arrangedSubviews: [symbol, makeMessage()])
             stackView.distribution = .fillProportionally
             stackView.axis = .horizontal
@@ -98,7 +98,7 @@ public final class BannerView: UIView {
             stackView.translatesAutoresizingMaskIntoConstraints = false
             return stackView
         }
-        
+
         setContent(makeContent())
     }
 
