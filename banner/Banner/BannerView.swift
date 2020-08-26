@@ -11,7 +11,7 @@ import UIKit
 
 public struct BannerStyle {
     public var backgroundColor: UIColor
-    
+
     public init(backgroundColor: UIColor) {
         self.backgroundColor = backgroundColor
     }
@@ -26,18 +26,18 @@ public final class BannerView: UIView {
     private var swipeIndicator: UIImageView
     private var style: BannerStyle
     private var action: (() -> Void)?
-    
+
     public init(action: (() -> Void)? = nil, style: BannerStyle = BannerStyle(backgroundColor: .red)) {
         swipeIndicator = UIImageView(image: UIImage(named: "SiwipeIndicator"))
         contentView = UIView(frame: .zero)
         self.action = action
         self.style = style
         super.init(frame: .zero)
-        
+
         setupUI()
         setupGestures()
     }
-    
+
     public func setContent(_ view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
@@ -46,33 +46,33 @@ public final class BannerView: UIView {
             view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             view.topAnchor.constraint(equalTo: contentView.topAnchor),
-            view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 
     private func setupUI() {
         addSubview(contentView)
         addSubview(swipeIndicator)
-        
+
         backgroundColor = style.backgroundColor
-        
+
         contentView.translatesAutoresizingMaskIntoConstraints = false
         swipeIndicator.translatesAutoresizingMaskIntoConstraints = false
-        
+
         NSLayoutConstraint.activate([
             swipeIndicator.heightAnchor.constraint(equalToConstant: 4),
             swipeIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
-            swipeIndicator.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
+            swipeIndicator.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4)
         ])
-        
+
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            contentView.bottomAnchor.constraint(equalTo: swipeIndicator.topAnchor, constant: -8),
+            contentView.bottomAnchor.constraint(equalTo: swipeIndicator.topAnchor, constant: -8)
         ])
     }
-    
+
     @objc func show() {
         layer.anchorPoint.y = hiddenAnchorY
         UIView.animate(withDuration: animationDuration,
@@ -83,7 +83,7 @@ public final class BannerView: UIView {
                         self.action?()
         })
     }
-    
+
     @objc func dismiss() {
         UIView.animate(withDuration: animationDuration,
                        delay: 0,
@@ -95,7 +95,7 @@ public final class BannerView: UIView {
             self.removeFromSuperview()
         }
     }
-    
+
     private func setupGestures() {
         let tapGesture = UITapGestureRecognizer()
         tapGesture.addTarget(self, action: #selector(dismiss))
@@ -106,7 +106,7 @@ public final class BannerView: UIView {
         swipeGesture.direction = .up
         addGestureRecognizer(swipeGesture)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

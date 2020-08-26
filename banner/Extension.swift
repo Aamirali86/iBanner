@@ -28,7 +28,7 @@ extension UIView {
         layer.shadowOffset = offset
         layer.shadowRadius = radius
         layer.masksToBounds = false
-    }    
+    }
 }
 
 extension UIColor {
@@ -50,22 +50,22 @@ extension UIViewController {
 
         return findRootPresenter(self, lastPresenter: self)
     }
-    
+
     @objc var takesOverBannerPresentation: Bool {
         return false
     }
-    
+
     func presentBanner(action: (() -> Void)? = nil,
                               contentViewSetupHandler: Content) {
         let banner = BannerView(action: action)
         bannerPresenter.view.addSubview(banner)
         banner.show()
-        
+
         banner.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             banner.leadingAnchor.constraint(equalTo: bannerPresenter.view.leadingAnchor),
             banner.trailingAnchor.constraint(equalTo: bannerPresenter.view.trailingAnchor),
-            banner.topAnchor.constraint(equalTo: bannerPresenter.view.topAnchor),
+            banner.topAnchor.constraint(equalTo: bannerPresenter.view.topAnchor)
         ])
 
         contentViewSetupHandler(banner)
