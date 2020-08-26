@@ -9,14 +9,6 @@
 import Foundation
 import UIKit
 
-public struct BannerStyle {
-    public var backgroundColor: UIColor
-
-    public init(backgroundColor: UIColor) {
-        self.backgroundColor = backgroundColor
-    }
-}
-
 private let animationDuration: TimeInterval = 0.3
 private let defaultAnchorY: CGFloat = 0.5
 private let hiddenAnchorY: CGFloat = 1.5
@@ -25,18 +17,19 @@ private let autoDismissDelay: TimeInterval = 3
 public final class BannerView: UIView {
     private var contentView: UIView
     private var swipeIndicator: UIImageView
-    private var style: BannerStyle
-    private var action: (() -> Void)?
+    private var message: String
 
-    public init(action: (() -> Void)? = nil, style: BannerStyle = BannerStyle(backgroundColor: .red)) {
+    public init(_ message: String) {
         swipeIndicator = UIImageView(image: UIImage(named: "SiwipeIndicator"))
         contentView = UIView(frame: .zero)
-        self.action = action
-        self.style = style
+        self.message = message
         super.init(frame: .zero)
 
         setupUI()
         setupGestures()
+        if BannerConfiguration.shared.bannerType != .custom {
+            setupContent()
+        }
     }
 
     public func setContent(_ view: UIView) {
@@ -55,7 +48,7 @@ public final class BannerView: UIView {
         addSubview(contentView)
         addSubview(swipeIndicator)
 
-        backgroundColor = style.backgroundColor
+        backgroundColor = BannerConfiguration.shared.bannerType.backgroundColor
 
         contentView.translatesAutoresizingMaskIntoConstraints = false
         swipeIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -73,17 +66,52 @@ public final class BannerView: UIView {
             contentView.bottomAnchor.constraint(equalTo: swipeIndicator.topAnchor, constant: -8)
         ])
     }
+    
+    private func setupContent() {
+        func makeSymbol() -> UIImageView {
+            let imageView = UIImageView(image: BannerConfiguration.shared.bannerType.icon)
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
+            imageView.tintColor = .white
+            return imageView
+        }
+        
+        func makeMessage() -> UILabel {
+            let label = UILabel()
+            label.text = message
+            label.numberOfLines = 0
+            label.lineBreakMode = .byWordWrapping
+            label.textColor = BannerConfiguration.shared.bannerType.textColor
+            label.font = UIFont(name: "HelveticaNeue-Bold", size: 18)
+            return label
+        }
+        
+        func makeContent() -> UIStackView {
+            let symbol = makeSymbol()
+            symbol.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+            
+            let stackView = UIStackView(arrangedSubviews: [symbol, makeMessage()])
+            stackView.distribution = .fillProportionally
+            stackView.axis = .horizontal
+            stackView.alignment = .top
+            stackView.spacing = 12
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            return stackView
+        }
+        
+        setContent(makeContent())
+    }
 
-    @objc func show(autoDismiss: Bool) {
+    @objc func show() {
         layer.anchorPoint.y = hiddenAnchorY
         UIView.animate(withDuration: animationDuration,
                        delay: 0,
                        options: .curveEaseOut,
                        animations: {
                         self.layer.anchorPoint.y = defaultAnchorY
-                        self.action?()
+                        BannerConfiguration.shared.dismissAction?()
             }, completion: { _ in
-                if autoDismiss {
+                if BannerConfiguration.shared.autoDismiss {
                     DispatchQueue.main.asyncAfter(deadline: .now() + autoDismissDelay) {
                         self.dismiss()
                     }

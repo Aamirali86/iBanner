@@ -31,26 +31,6 @@ class ViewController: UIViewController {
     }
 
     @objc func showBanner() {
-        presentBanner(action: {
-            //some action
-        }, contentViewSetupHandler: { banner in
-            let stackView = makeContent()
-            banner.setContent(stackView)
-        })
-    }
-
-    private func makeContent() -> UIStackView {
-        let stackView = UIStackView(arrangedSubviews: [makeText(), makeText()])
-        stackView.distribution = .fill
-        stackView.axis = .vertical
-        stackView.spacing = 4
-        return stackView
-    }
-
-    private func makeText() -> UILabel {
-        let label = UILabel()
-        label.text = "Empty banner"
-        label.textColor = .white
-        return label
+        presentBanner(message: "Custom message")
     }
 }

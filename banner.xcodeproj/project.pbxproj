@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291F9E0824F6B51E00B0A17E /* BannerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F9E0724F6B51E00B0A17E /* BannerType.swift */; };
+		291F9E0A24F6BABE00B0A17E /* BannerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291F9E0924F6BABE00B0A17E /* BannerConfiguration.swift */; };
 		29940C2824F42BD4006A7705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29940C2724F42BD4006A7705 /* AppDelegate.swift */; };
 		29940C2A24F42BD4006A7705 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29940C2924F42BD4006A7705 /* SceneDelegate.swift */; };
 		29940C2C24F42BD4006A7705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29940C2B24F42BD4006A7705 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		291F9E0724F6B51E00B0A17E /* BannerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerType.swift; sourceTree = "<group>"; };
+		291F9E0924F6BABE00B0A17E /* BannerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerConfiguration.swift; sourceTree = "<group>"; };
 		29940C2424F42BD4006A7705 /* banner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = banner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29940C2724F42BD4006A7705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29940C2924F42BD4006A7705 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				29940C3C24F42C0F006A7705 /* BannerView.swift */,
+				291F9E0724F6B51E00B0A17E /* BannerType.swift */,
+				291F9E0924F6BABE00B0A17E /* BannerConfiguration.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				29940C3F24F529E9006A7705 /* Extension.swift in Sources */,
+				291F9E0824F6B51E00B0A17E /* BannerType.swift in Sources */,
+				291F9E0A24F6BABE00B0A17E /* BannerConfiguration.swift in Sources */,
 				29940C3D24F42C0F006A7705 /* BannerView.swift in Sources */,
 				29940C2C24F42BD4006A7705 /* ViewController.swift in Sources */,
 				29940C2824F42BD4006A7705 /* AppDelegate.swift in Sources */,

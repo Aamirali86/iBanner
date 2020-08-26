@@ -34,9 +34,21 @@ extension UIView {
 extension UIColor {
     /// #C3CCD2, alpha 20%
     static let shadow = #colorLiteral(red: 0.18, green: 0.18, blue: 0.18, alpha: 0.2)
+    
+    /// #41C977
+    static let green = #colorLiteral(red: 0.2549019608, green: 0.7882352941, blue: 0.4666666667, alpha: 1)
+    
+    /// #ED9E37
+    static let orange = #colorLiteral(red: 0.9294117647, green: 0.6196078431, blue: 0.2156862745, alpha: 1)
+    
+    /// #E25148
+    static let red = #colorLiteral(red: 0.8862745098, green: 0.3176470588, blue: 0.2823529412, alpha: 1)
+    
+    /// #5697D3
+    static let blue = #colorLiteral(red: 0.2329987586, green: 0.6000669003, blue: 0.8483656645, alpha: 1)
 }
 
-typealias Content = (BannerView) -> Void
+typealias Content = ((BannerView) -> Void)?
 extension UIViewController {
     private var bannerPresenter: UIViewController {
         func findRootPresenter(_ viewController: UIViewController, lastPresenter: UIViewController) -> UIViewController {
@@ -55,12 +67,14 @@ extension UIViewController {
         return false
     }
 
-    func presentBanner(autoDismiss: Bool = true,
-                       action: (() -> Void)? = nil,
-                       contentViewSetupHandler: Content) {
-        let banner = BannerView(action: action)
+    func presentBanner(message: String, contentViewSetupHandler: Content = nil) {
+        if let _ = contentViewSetupHandler {
+            BannerConfiguration.shared.bannerType = .custom
+        }
+        
+        let banner = BannerView(message)
         bannerPresenter.view.addSubview(banner)
-        banner.show(autoDismiss: autoDismiss)
+        banner.show()
 
         banner.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -69,7 +83,7 @@ extension UIViewController {
             banner.topAnchor.constraint(equalTo: bannerPresenter.view.topAnchor)
         ])
 
-        contentViewSetupHandler(banner)
+        contentViewSetupHandler?(banner)
     }
 }
 
