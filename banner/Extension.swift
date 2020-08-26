@@ -55,11 +55,12 @@ extension UIViewController {
         return false
     }
 
-    func presentBanner(action: (() -> Void)? = nil,
-                              contentViewSetupHandler: Content) {
+    func presentBanner(autoDismiss: Bool = true,
+                       action: (() -> Void)? = nil,
+                       contentViewSetupHandler: Content) {
         let banner = BannerView(action: action)
         bannerPresenter.view.addSubview(banner)
-        banner.show()
+        banner.show(autoDismiss: autoDismiss)
 
         banner.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

@@ -20,6 +20,7 @@ public struct BannerStyle {
 private let animationDuration: TimeInterval = 0.3
 private let defaultAnchorY: CGFloat = 0.5
 private let hiddenAnchorY: CGFloat = 1.5
+private let autoDismissDelay: TimeInterval = 3
 
 public final class BannerView: UIView {
     private var contentView: UIView
@@ -73,14 +74,20 @@ public final class BannerView: UIView {
         ])
     }
 
-    @objc func show() {
+    @objc func show(autoDismiss: Bool) {
         layer.anchorPoint.y = hiddenAnchorY
         UIView.animate(withDuration: animationDuration,
                        delay: 0,
                        options: .curveEaseOut,
-                       animations: { [unowned self] in
+                       animations: {
                         self.layer.anchorPoint.y = defaultAnchorY
                         self.action?()
+            }, completion: { _ in
+                if autoDismiss {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + autoDismissDelay) {
+                        self.dismiss()
+                    }
+                }
         })
     }
 
@@ -88,9 +95,9 @@ public final class BannerView: UIView {
         UIView.animate(withDuration: animationDuration,
                        delay: 0,
                        options: .curveEaseIn,
-                       animations: { [unowned self] in
+                       animations: {
             self.layer.anchorPoint.y = hiddenAnchorY
-        }) { [unowned self] _ in
+        }) { _ in
             self.layer.anchorPoint.y = defaultAnchorY
             self.removeFromSuperview()
         }
