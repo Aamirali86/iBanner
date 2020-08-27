@@ -12,7 +12,6 @@ import UIKit
 private let animationDuration: TimeInterval = 0.3
 private let defaultAnchorY: CGFloat = 0.5
 private let hiddenAnchorY: CGFloat = 1.5
-private let autoDismissDelay: TimeInterval = 3
 
 public final class BannerView: UIView {
     private var contentView: UIView
@@ -112,7 +111,7 @@ public final class BannerView: UIView {
                         BannerConfiguration.shared.dismissAction?()
             }, completion: { _ in
                 if BannerConfiguration.shared.autoDismiss {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + autoDismissDelay) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + BannerConfiguration.shared.autoDismissDelay) {
                         self.dismiss()
                     }
                 }

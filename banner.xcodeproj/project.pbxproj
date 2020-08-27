@@ -50,7 +50,6 @@
 			children = (
 				29940C2624F42BD4006A7705 /* banner */,
 				29940C2524F42BD4006A7705 /* Products */,
-				73D683E1CA606AE9CE563FB2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,13 +85,6 @@
 				291F9E0924F6BABE00B0A17E /* BannerConfiguration.swift */,
 			);
 			path = Banner;
-			sourceTree = "<group>";
-		};
-		73D683E1CA606AE9CE563FB2 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
