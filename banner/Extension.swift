@@ -62,7 +62,7 @@ extension UIViewController {
 
         return findRootPresenter(self, lastPresenter: self)
     }
-    
+
     private func dismissAllBanners() {
         bannerPresenter.view.subviews.forEach { subView in
             guard subView is BannerView else { return }
