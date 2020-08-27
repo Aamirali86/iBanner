@@ -62,6 +62,13 @@ extension UIViewController {
 
         return findRootPresenter(self, lastPresenter: self)
     }
+    
+    private func dismissAllBanners() {
+        bannerPresenter.view.subviews.forEach { subView in
+            guard subView is BannerView else { return }
+            subView.removeFromSuperview()
+        }
+    }
 
     @objc var takesOverBannerPresentation: Bool {
         return false
@@ -73,6 +80,7 @@ extension UIViewController {
         }
 
         let banner = BannerView(message)
+        bannerPresenter.dismissAllBanners()
         bannerPresenter.view.addSubview(banner)
         banner.show()
 
