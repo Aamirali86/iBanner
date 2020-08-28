@@ -13,7 +13,7 @@ struct BannerConfiguration {
 
     var autoDismiss: Bool = true
     var autoDismissDelay: TimeInterval = 3
-    var bannerType: BannerType = .success
+    var bannerType: BannerType = .info
     var dismissAction: (() -> Void)?
 
     private init() {}
