@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDefault()
-        
+
         message.delegate = self
         dismissDelay.delegate = self
     }
@@ -74,9 +74,9 @@ class ViewController: UIViewController {
     }
 }
 
-extension UIViewController: UITextFieldDelegate{
+extension UIViewController: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        return true;
+        return true
     }
 }
