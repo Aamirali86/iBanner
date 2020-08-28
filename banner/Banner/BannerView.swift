@@ -59,7 +59,7 @@ public final class BannerView: UIView {
         ])
 
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            contentView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             contentView.bottomAnchor.constraint(equalTo: swipeIndicator.topAnchor, constant: -8)

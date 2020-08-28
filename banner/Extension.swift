@@ -9,12 +9,11 @@
 import UIKit
 
 extension UIView {
-    /// Dark Long - For sheets covering items
-    public func setSheetShadow() {
+    public func setBannerShadow() {
         setShadow(color: .shadow,
                   opacity: 1,
                   offset: CGSize(width: 0, height: 6.0),
-                  radius: 30,
+                  radius: 24,
                   viewCornerRadius: 0)
     }
 
@@ -32,8 +31,8 @@ extension UIView {
 }
 
 extension UIColor {
-    /// #C3CCD2, alpha 20%
-    static let shadow = #colorLiteral(red: 0.18, green: 0.18, blue: 0.18, alpha: 0.2)
+    /// #C3CCD2, opacity 24%
+    static let shadow = #colorLiteral(red: 0.18, green: 0.18, blue: 0.18, alpha: 0.2446990352)
 
     /// #41C977
     static let green = #colorLiteral(red: 0.2549019608, green: 0.7882352941, blue: 0.4666666667, alpha: 1)
@@ -80,6 +79,7 @@ extension UIViewController {
         }
 
         let banner = BannerView(message)
+        banner.setBannerShadow()
         bannerPresenter.dismissAllBanners()
         bannerPresenter.view.addSubview(banner)
         banner.show()
