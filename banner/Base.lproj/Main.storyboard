@@ -47,7 +47,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BDq-jb-bvG">
                                                 <rect key="frame" x="135.5" y="0.0" width="262.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -60,7 +60,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnT-r6-Ufk">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello world!" borderStyle="roundedRect" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnT-r6-Ufk">
                                                 <rect key="frame" x="77" y="0.0" width="321" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
@@ -146,7 +146,7 @@
                     <navigationItem key="navigationItem" id="eUa-NN-rnH"/>
                     <connections>
                         <outlet property="blue" destination="T7K-eF-53n" id="8n9-yN-rA5"/>
-                        <outlet property="dismissDelay" destination="lnT-r6-Ufk" id="Rfo-8J-HIm"/>
+                        <outlet property="dismissDelay" destination="BDq-jb-bvG" id="jdu-cV-s1r"/>
                         <outlet property="green" destination="bkj-qM-UbN" id="WLO-07-7Yv"/>
                         <outlet property="message" destination="lnT-r6-Ufk" id="07o-Ws-MWg"/>
                         <outlet property="orange" destination="avP-16-2ew" id="vCu-cd-YqZ"/>

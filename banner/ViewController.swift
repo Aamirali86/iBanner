@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDefault()
+        
+        message.delegate = self
+        dismissDelay.delegate = self
     }
 
     private func setupDefault() {
@@ -28,6 +31,7 @@ class ViewController: UIViewController {
 
     @IBAction func autoDismiss(_ sender: UISwitch) {
         BannerConfiguration.shared.autoDismiss = sender.isOn
+        dismissDelay.isEnabled = sender.isOn
     }
 
     @IBAction private func blueTapped() {
@@ -63,6 +67,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func showBanner() {
-        presentBanner(message: "Custom message")
+        BannerConfiguration.shared.autoDismissDelay = Double(dismissDelay.text ?? "3") ?? 3
+        if let message = message.text, !message.isEmpty {
+            presentBanner(message: message)
+        }
+    }
+}
+
+extension UIViewController: UITextFieldDelegate{
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
     }
 }
