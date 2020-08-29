@@ -12,14 +12,13 @@ Pod::Spec.new do |spec|
   spec.version      = "0.0.1"
   spec.summary      = "iBanner is a customizable and lightweight library that makes the task of displaying in app notification banners in iOS."
 
-  s.homepage         = 'https://github.com/Aamirali86/iBanner'
-  spec.license      = "MIT (example)"
+  spec.homepage         = 'https://github.com/Aamirali86/iBanner'
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
   spec.author             = { "Muhammad Aamir Ali" => "aamir-muhammad@hotmail.com" }
   # spec.authors            = { "Muhammad Aamir" => "" }
-  spec.social_media_url   = "http://linkedin.com/in/muhammadaamirali/"
+  spec.social_media_url   = "https://linkedin.com/in/muhammadaamirali/"
 
   spec.platform     = :ios
   spec.platform     = :ios, "5.0"
@@ -31,7 +30,7 @@ Pod::Spec.new do |spec|
   # spec.tvos.deployment_target = "9.0"
 
   spec.source       = { :git => "https://github.com/Aamirali86/iBanner.git", :tag => "#{spec.version}" }
-
+  spec.source_files = 'Banner/**/*.{swift}'
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -42,7 +41,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.source_files = 'SmartToast/Classes/**/*'
-  spec.source_files  = "banner/Banner/**/*"
+  spec.source_files  = "Banner/**/*"
 
   # spec.resource  = "icon.png"
   # spec.resources = "Resources/*.png"

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iBanner
 
 class ViewController: UIViewController {
 

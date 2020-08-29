@@ -1,0 +1,16 @@
+PODS:
+  - iBanner (0.0.1)
+
+DEPENDENCIES:
+  - iBanner (from `../`)
+
+EXTERNAL SOURCES:
+  iBanner:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  iBanner: 6aa35264ea2d403665b5a48b0cd90a485a527dcb
+
+PODFILE CHECKSUM: 044a5037a281e07fa16df1c09cfc5fb0922c27b3
+
+COCOAPODS: 1.10.0.beta.1

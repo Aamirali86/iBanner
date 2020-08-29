@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct BannerConfiguration {
+public struct BannerConfiguration {
     public static var shared = BannerConfiguration()
 
-    var autoDismiss: Bool = true
-    var autoDismissDelay: TimeInterval = 3
-    var bannerType: BannerType = .info
-    var dismissAction: (() -> Void)?
+    public var autoDismiss: Bool = true
+    public var autoDismissDelay: TimeInterval = 3
+    public var bannerType: BannerType = .info
+    public var dismissAction: (() -> Void)?
 
     private init() {}
 

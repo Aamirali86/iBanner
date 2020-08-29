@@ -47,7 +47,7 @@ extension UIColor {
     static let blue = #colorLiteral(red: 0.2329987586, green: 0.6000669003, blue: 0.8483656645, alpha: 1)
 }
 
-typealias Content = ((BannerView) -> Void)?
+public typealias Content = ((BannerView) -> Void)?
 extension UIViewController {
     private var bannerPresenter: UIViewController {
         func findRootPresenter(_ viewController: UIViewController, lastPresenter: UIViewController) -> UIViewController {
@@ -73,7 +73,7 @@ extension UIViewController {
         return false
     }
 
-    func presentBanner(message: String, contentViewSetupHandler: Content = nil) {
+    public func presentBanner(message: String, contentViewSetupHandler: Content = nil) {
         if let _ = contentViewSetupHandler {
             BannerConfiguration.shared.bannerType = .custom
         }
