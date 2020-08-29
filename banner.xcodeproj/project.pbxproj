@@ -17,6 +17,7 @@
 		29940C3424F42BD7006A7705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29940C3224F42BD7006A7705 /* LaunchScreen.storyboard */; };
 		29940C3D24F42C0F006A7705 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29940C3C24F42C0F006A7705 /* BannerView.swift */; };
 		29940C3F24F529E9006A7705 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29940C3E24F529E9006A7705 /* Extension.swift */; };
+		29D5BD1C24F9B13F00C18B28 /* CustomBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D5BD1B24F9B13E00C18B28 /* CustomBanner.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		29940C3524F42BD7006A7705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29940C3C24F42C0F006A7705 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		29940C3E24F529E9006A7705 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		29D5BD1B24F9B13E00C18B28 /* CustomBanner.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomBanner.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +68,13 @@
 			children = (
 				29940C3B24F42C04006A7705 /* Banner */,
 				29940C2724F42BD4006A7705 /* AppDelegate.swift */,
-				29940C3E24F529E9006A7705 /* Extension.swift */,
 				29940C2924F42BD4006A7705 /* SceneDelegate.swift */,
 				29940C2B24F42BD4006A7705 /* ViewController.swift */,
 				29940C2D24F42BD4006A7705 /* Main.storyboard */,
 				29940C3024F42BD7006A7705 /* Assets.xcassets */,
 				29940C3224F42BD7006A7705 /* LaunchScreen.storyboard */,
 				29940C3524F42BD7006A7705 /* Info.plist */,
+				29D5BD1B24F9B13E00C18B28 /* CustomBanner.xib */,
 			);
 			path = banner;
 			sourceTree = "<group>";
@@ -80,6 +82,7 @@
 		29940C3B24F42C04006A7705 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
+				29940C3E24F529E9006A7705 /* Extension.swift */,
 				29940C3C24F42C0F006A7705 /* BannerView.swift */,
 				291F9E0724F6B51E00B0A17E /* BannerType.swift */,
 				291F9E0924F6BABE00B0A17E /* BannerConfiguration.swift */,
@@ -147,6 +150,7 @@
 			files = (
 				29940C3424F42BD7006A7705 /* LaunchScreen.storyboard in Resources */,
 				29940C3124F42BD7006A7705 /* Assets.xcassets in Resources */,
+				29D5BD1C24F9B13F00C18B28 /* CustomBanner.xib in Resources */,
 				29940C2F24F42BD4006A7705 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
