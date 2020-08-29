@@ -30,8 +30,41 @@ iBanner is a customizable and lightweight library that makes the task of display
 iBanner is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-#### Swift 5 + xCode 11 + iOS 13 Support
-
 ```ruby
 pod 'iBanner'
+```
+
+## Usage
+To create a regular banner and show it, simply:
+
+```swift
+presentBanner(message: message)
+```
+
+To show a custom banner and to add any view into banner simply:
+```swift
+presentBanner(message: message) { banner in
+    //Load view from nib or create programmatically
+    guard let view = Bundle.main.loadNibNamed("CustomBanner", owner: self, options: nil)?.first as? UIView else { return }
+    banner.setContent(view)
+}
+```
+
+To show different types of banner like:
+- info
+- warning
+- error
+- success
+
+just need to update banner type in BannerConfigurations
+```swift
+BannerConfiguration.shared.bannerType = .info
+BannerConfiguration.shared.bannerType = .warning
+BannerConfiguration.shared.bannerType = .danger
+BannerConfiguration.shared.bannerType = .success
+```
+To auto dismiss and dismiss delay simply:
+```swift
+BannerConfiguration.shared.autoDismiss = true
+BannerConfiguration.shared.dismissDelay = 3.0
 ```
