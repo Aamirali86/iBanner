@@ -5,11 +5,11 @@ iBanner is a customizable and lightweight library that makes the task of display
 
 | Basic Banners | Banners with different types |
 | ------------- | ------------- |
-| ![Basic Banners](banner/gifs/basic.gif)  | ![Banners with Types](banner/gifs/types.gif)  | 
+| ![Basic Banners](Example/gifs/basic.gif)  | ![Banners with Types](Example/gifs/types.gif)  | 
 
 | Growing Banners | Custom Banners |
 | ------------- | ------------- |
-| ![Growing Banners](banner/gifs/growing.gif)  | ![Custom Banners](banner/gifs/custom.gif) | 
+| ![Growing Banners](Example/gifs/growing.gif)  | ![Custom Banners](Example/gifs/custom.gif) | 
 
 ## Features
 - Highly customizable ✅
