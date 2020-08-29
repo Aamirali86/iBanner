@@ -2,15 +2,15 @@ PODS:
   - iBanner (0.0.1)
 
 DEPENDENCIES:
-  - iBanner (from `../`)
+  - iBanner
 
-EXTERNAL SOURCES:
-  iBanner:
-    :path: "../"
+SPEC REPOS:
+  trunk:
+    - iBanner
 
 SPEC CHECKSUMS:
-  iBanner: 6aa35264ea2d403665b5a48b0cd90a485a527dcb
+  iBanner: 094c225fa66a320d3175969d014c917a8d48f9b2
 
-PODFILE CHECKSUM: 044a5037a281e07fa16df1c09cfc5fb0922c27b3
+PODFILE CHECKSUM: 5bea59cfed067b4059b8c5aa0477fa51e7ad4f77
 
 COCOAPODS: 1.10.0.beta.1

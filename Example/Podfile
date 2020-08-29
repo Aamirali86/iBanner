@@ -6,6 +6,6 @@ target 'banner' do
   use_frameworks!
 
   # Pods for banner
-  pod 'iBanner', :path => '../'
+  pod 'iBanner'
 
 end
