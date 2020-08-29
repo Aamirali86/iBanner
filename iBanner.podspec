@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "iBanner"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "iBanner is a customizable and lightweight library that makes the task of displaying in app notification banners in iOS."
 
   spec.homepage         = 'https://github.com/Aamirali86/iBanner'
