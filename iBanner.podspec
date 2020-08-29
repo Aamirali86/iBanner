@@ -21,27 +21,11 @@ Pod::Spec.new do |spec|
   spec.social_media_url   = "https://linkedin.com/in/muhammadaamirali/"
 
   spec.platform     = :ios
-  spec.platform     = :ios, "5.0"
-
-  #  When using multiple platforms
-  # spec.ios.deployment_target = "5.0"
-  # spec.osx.deployment_target = "10.7"
-  # spec.watchos.deployment_target = "2.0"
-  # spec.tvos.deployment_target = "9.0"
+  spec.swift_version = "5.0"
+  spec.ios.deployment_target = "11.0"
 
   spec.source       = { :git => "https://github.com/Aamirali86/iBanner.git", :tag => "#{spec.version}" }
   spec.source_files = 'Banner/**/*.{swift}'
-
-  # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  CocoaPods is smart about how it includes source code. For source files
-  #  giving a folder will include any swift, h, m, mm, c & cpp files.
-  #  For header files it will include any header in the folder.
-  #  Not including the public_header_files will make all headers public.
-  #
-
-  spec.source_files = 'SmartToast/Classes/**/*'
-  spec.source_files  = "Banner/**/*"
 
   # spec.resource  = "icon.png"
   # spec.resources = "Resources/*.png"
