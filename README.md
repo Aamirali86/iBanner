@@ -10,3 +10,28 @@ iBanner is a customizable and lightweight library that makes the task of display
 | Growing Banners | Custom Banners |
 | ------------- | ------------- |
 | ![Growing Banners](banner/gifs/growing.gif)  | ![Custom Banners](banner/gifs/custom.gif) | 
+
+## Features
+- Highly customizable ✅
+- iPhone, iPhoneX, & iPad Support ✅
+- Orientation change support ✅
+- Custom `UIView` support ✅
+- Support for long titles/ subtitles ✅
+- Auto dismiss support ✅
+
+## Requirements
+ - iOS 11.0+
+ - Xcode 11.0+
+ 
+## Installation
+
+### CocoaPods
+
+iBanner is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+#### Swift 5 + xCode 11 + iOS 13 Support
+
+```ruby
+pod 'iBanner'
+```
