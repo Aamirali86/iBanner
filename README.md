@@ -43,7 +43,7 @@ presentBanner(message: message)
 
 To show a custom banner and to add any view into banner simply:
 ```swift
-presentBanner(message: message) { banner in
+presentBanner() { banner in
     //Load view from nib or create programmatically
     guard let view = Bundle.main.loadNibNamed("CustomBanner", owner: self, options: nil)?.first as? UIView else { return }
     banner.setContent(view)

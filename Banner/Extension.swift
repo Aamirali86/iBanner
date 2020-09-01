@@ -73,12 +73,16 @@ extension UIViewController {
         return false
     }
 
-    public func presentBanner(message: String, contentViewSetupHandler: Content = nil) {
+    public func presentBanner(message: String) {
+        presentBanner(message, contentViewSetupHandler: nil)
+    }
+    
+    public func presentBanner(_ message: String? = nil, contentViewSetupHandler: Content) {
         if let _ = contentViewSetupHandler {
             BannerConfiguration.shared.bannerType = .custom
         }
-
-        let banner = BannerView(message)
+        
+        let banner = BannerView(message ?? "")
         banner.setBannerShadow()
         bannerPresenter.dismissAllBanners()
         bannerPresenter.view.addSubview(banner)

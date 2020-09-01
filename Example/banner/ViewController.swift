@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         BannerConfiguration.shared.autoDismissDelay = Double(dismissDelay.text ?? "3") ?? 3
         if let message = message.text, !message.isEmpty {
             //presentBanner(message: message)
-            presentBanner(message: message) { banner in
+            presentBanner() { banner in
                 guard let view = Bundle.main.loadNibNamed("CustomBanner", owner: self, options: nil)?.first as? UIView else { return }
                 banner.setContent(view)
             }
